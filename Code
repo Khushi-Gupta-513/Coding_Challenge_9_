@@ -72,3 +72,24 @@ class Patron {
         }
     }
 }
+
+// VIPPatron class that inherits from Patron
+class VIPPatron extends Patron {
+    constructor(name, priority = true) {
+        super(name);
+        this.priority = priority;
+    }
+
+    borrowBook(book) {
+        // VIPs have priority if the book is borrowed by another patron
+        if (this.priority) {
+            if (!book.isAvailable) {
+                console.log(`${this.name} (VIP) gets priority and can borrow "${book.title}".`);
+                this.forceBorrowBook(book);  // VIP overrides and borrows the book
+            } else {
+                super.borrowBook(book);  // If available, borrow as usual
+            }
+        } else {
+            super.borrowBook(book);  // If not VIP, borrow like a regular patron
+        }
+    }
