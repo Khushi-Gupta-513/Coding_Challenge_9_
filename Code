@@ -102,6 +102,20 @@ class VIPPatron extends Patron {
     }
 }
 
+
 // Create sections
 const fiction = new Section("Fiction");
 const science = new Section("Science");
+
+// Create books
+const book1 = new Book("1984", "George Orwell", "1234567890");
+const book2 = new Book("Brave New World", "Aldous Huxley", "0987654321");
+const book3 = new Book("The Selfish Gene", "Richard Dawkins", "1122334455");
+
+// Add books to sections
+fiction.addBook(book1);
+fiction.addBook(book2);
+science.addBook(book3);
+
+
+
