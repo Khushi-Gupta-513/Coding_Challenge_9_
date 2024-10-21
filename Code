@@ -101,3 +101,7 @@ class VIPPatron extends Patron {
         console.log(`${this.name} (VIP) borrowed "${book.title}".`);
     }
 }
+
+// Create sections
+const fiction = new Section("Fiction");
+const science = new Section("Science");
