@@ -93,3 +93,11 @@ class VIPPatron extends Patron {
             super.borrowBook(book);  // If not VIP, borrow like a regular patron
         }
     }
+
+    // VIP forced borrowing
+    forceBorrowBook(book) {
+        book.isAvailable = false;
+        this.borrowedBooks.push(book);
+        console.log(`${this.name} (VIP) borrowed "${book.title}".`);
+    }
+}
